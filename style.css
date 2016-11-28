@@ -2,18 +2,17 @@
     --bg: #161926;
     --bg-light: #212133;
     --font: #AFADCC;
-    --accent: #d86175;
+    --accent: #D8566C;
     --shadow: #080B11;
 }
 
 * {
     margin: 0px;
     padding: 0px;
-    transition: 0.2s ease-in-out;
+    transition: 0.1s ease-in-out;
 }
 
 body {
-    margin-top: 10px;
     background: var(--bg);
     color: var(--font);
     font-family: "Roboto", sans-serif;
@@ -38,53 +37,60 @@ span {
     color: var(--accent);
 }
 
+div {
+    overflow: hidden;
+}
+
 body > div {
     width: 800px;
     margin: auto;
-    margin-bottom: 10px;
-    padding: 30px;
-    box-shadow: 0px 0px 25px var(--shadow);
-    border-left: 0px solid;
+    margin-top: 10px;
+    padding: 20px;
+    padding-left: 15px;
+    background: var(--bg-light);
+    border-left: 5px solid var(--bg-light);
+    box-sizing: border-box;
 }
 
 body > div:hover {
     border-left: 5px solid var(--accent);
 }
 
-body > div > div {
+body > div > * {
     margin-top: 10px;
-    overflow: hidden;
 }
 
-div > div > img {
+div > *:first-child {
+    margin-top: 0px;
+}
+
+div > img {
     width: 100%;
-    transition: 0.4s;
+    transition: 0.2s;
 }
 
-div > div > img:hover {
+div > img:hover {
     transform: scale(1.5);
 }
 
 input {
-    margin-top: 10px;
     width: 100%;
     background: none;
     border: none;
     outline: none;
-    text-align: left;
     color: var(--accent);
     font-family: inherit;
     font-size: inherit;
 }
 
 ::-webkit-input-placeholder {
-    opacity: 0.2;
+    opacity: 0.25;
     color: var(--font);
     transition: 0.2s;
 }
 
 input:hover::-webkit-input-placeholder {
-    opacity: 0.4;
+    opacity: 0.5;
 }
 
 input[type="submit"] {
@@ -93,28 +99,28 @@ input[type="submit"] {
 
 input[type="radio"], input[type="checkbox"] {
     float: left;
-    height: 16px;
-    width: 16px;
-    margin-top: 8px;
-    margin-right: 5px;
+    height: 14px;
+    width: 14px;
+    margin-top: 9px;
+    margin-right: 4px;
     visibility: hidden;
 }
 
 input[type="radio"]:after, input[type="checkbox"]:after {
     content: "";
     position: absolute;
-    height: 16px;
-    width: 16px;
+    height: 14px;
+    width: 14px;
     box-sizing: border-box;
     border-radius: 50%;
     border: 3px solid var(--font);
     visibility: visible;
-    transition: 0.2s;
+    transition: 0.25s;
 }
 
 input[type=radio]:checked:after, input[type="checkbox"]:checked:after {
     background: var(--accent);
-    border: 3px solid var(--bg);
+    border: 0px solid;
 }
 
 input[type="checkbox"]:after {
